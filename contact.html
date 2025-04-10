@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Mohammed Fayaz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 60px; /* Space for footer */
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 12, 41, 0.85);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 16px;
+      background: linear-gradient(90deg, #00ffe7, #ff00c8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #0ff;
+    }
+
+    .contact-section {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .contact-section h2 {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+      background: linear-gradient(90deg, #00ffe7, #ff00c8);
+      text-shadow: 0 8px 80px rgba(0,0,0,0.5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      
+    }
+
+    .contact-section p {
+      color: #aaa;
+      margin-bottom: 40px;
+    }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .detail-item {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .detail-item img.icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+      filter: brightness(0) invert(1);
+    }
+
+    .detail-item h4 {
+      font-size: 18px;
+      background: linear-gradient(180deg,#0077ff, #00ffe7);
+      -webkit-background-clip:  text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 5px;
+    }
+
+    .detail-item p {
+      color: #bbb;
+    }
+    
+.card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .contact-card i {
+      font-size: 2rem;
+      color: #00ffff;
+      margin-bottom: 1rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .contact-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(180deg,#00ffff, #ff00c8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .contact-card p {
+      color: #ddd;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .contact-card p i {
+      margin-right: 8px;
+      font-size: 1rem;
+    }
+
+    .social-icons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a img {
+      width: 24px;
+      height: 24px;
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover img {
+      transform: scale(1.2);
+      filter: brightness(0) saturate(100%) invert(59%) sepia(95%) saturate(1943%) hue-rotate(142deg) brightness(103%) contrast(103%);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(15, 12, 41, 0.9);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      color: #999;
+      border-top: 0px solid #333;
+    }
+
+    @media (max-width: 768px) {
+      .contact-details {
+        flex-direction: column;
+        gap: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>FAYAZ</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="usecases.html">Use Cases</a>
+      <a href="contact.html"   class="active">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Feel free to reach out-I would like to connect and contribute to your team.</p>
+    <div class="contact-details">
+      <div class="detail-item">
+      <div class="card-container">
+      <div class="contact-card">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/24/684/684908.png" alt="Address Icon">
+        <h4>ADDRESS</h4>
+        <p>Trichy, Tamil Nadu, India</p>
+      </div>
+      </div>
+      <div class="detail-item">
+          <div class="card-container">
+          <div class="contact-card">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/24/159/159832.png" alt="Phone Icon">
+        <h4>PHONE</h4>
+        <p>+91 86670-47934</br>
+        +91 75581-67651</p>
+        </div>
+        </div>
+      </div>
+      <div class="detail-item">
+        <div class="card-container">
+        <div class="contact-card">
+        <img class="icon" src="https://cdn-icons-png.flaticon.com/24/561/561127.png" alt="Email Icon">
+        <h4>EMAIL</h4>
+        <p>fayazdolla@gmail.com</p>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png" alt="Facebook"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="Twitter"></a>
+      <a href="https://www.linkedin.com/in/mohammed-fayaz-b560a528b" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Mohammed Fayaz. All rights reserved.
+  </footer>
+</body>
+</html>

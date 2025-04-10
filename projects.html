@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects - Mohammed Fayaz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 60px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 12, 41, 0.85);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 16px;
+      background: linear-gradient(90deg, #00ffe7, #ff00c8);
+      text-shadow: 0 8px 80px rgba(0,0,0,0.5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #0ff;
+    }
+
+    .projects-section {
+      padding: 120px 40px 60px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      background: linear-gradient(90deg, #00ffe7, #ff00c8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 20px;
+      width: 260px;
+      height: 230px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      
+      cursor: pointer;
+      text-align: center;
+      position: relative;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      z-index: 1;
+      position: relative;
+      transition: opacity 0.3s ease;
+    }
+
+    .card-icon {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 15px;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      background: linear-gradient(180deg,#0077ff, #00ffe7);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .card-desc {
+      font-size: 0.9rem;
+      color: #ccc;
+      padding: 0 10px;
+    }
+
+    .card-hover-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+
+    .project-card:hover .card-content {
+      opacity: 0;
+    }
+
+    .project-card:hover .card-hover-img {
+      opacity: 1;
+    }
+    
+    .cta-link {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      border: #ffffff1a;
+      background: #ffffff1a;
+      color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      padding: 12px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      opacity: 0.7;
+      background: #00ffe7;
+      color: #2c2c2c;
+      font-weight: bold;
+      transform: scale(1);
+      filter: drop-shadow(0 0 2px #fff);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(15, 12, 41, 0.9);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      color: #999;
+      border-top: 0px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FAYAZ</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="usecases.html">Use Cases</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="projects-section">
+    <h1 class="section-title">My Projects</h1>
+    <div class="projects-container">
+
+      <div class="project-card">
+        <div class="card-content">
+          <img src="https://i.ibb.co/W4KyMMqy/customer-service.png" alt="Icon" class="card-icon" />
+          <h3 class="card-title">Abhyaz Services Page Design</h3>
+          <p class="card-desc">Interactive accordions and H5P slides for better engagement.</p>
+        </div>
+        <img src="https://i.ibb.co/YBKhFGjY/zoho-site.png" alt="Project Image" class="card-hover-img" />
+      </div>
+
+      <div class="project-card">
+        <div class="card-content">
+          <img src="https://i.ibb.co/kVCdMZvc/product-page.png" alt="Icon" class="card-icon" />
+          <h3 class="card-title">Abhyaz Products Page Design</h3>
+          <p class="card-desc">Designed onboarding and upcoming product sections.</p>
+        </div>
+        <img src="https://i.ibb.co/YBKhFGjY/zoho-site.png" alt="Project Image" class="card-hover-img" />
+      </div>
+
+      <div class="project-card">
+        <div class="card-content">
+          <img src="https://i.ibb.co/0yRzDhL5/case.png" alt="Icon" class="card-icon" />
+          <h3 class="card-title">Case Studies Section Design</h3>
+          <p class="card-desc">Responsive layout with visuals and storytelling.</p>
+        </div>
+        <img src="https://i.ibb.co/YBKhFGjY/zoho-site.png" alt="Project Image" class="card-hover-img" />
+      </div>
+
+      <div class="project-card">
+        <div class="card-content">
+          <img src="https://i.ibb.co/JRC6pcQG/integration.png" alt="Icon" class="card-icon" />
+          <h3 class="card-title">Zoho PageSense Integration</h3>
+          <p class="card-desc">Heatmaps, funnels, and event tracking integration.</p>
+        </div>
+        <img src="https://i.ibb.co/PGWRxprY/Zoho-pagesense-2-logo.png" alt="Project Image" class="card-hover-img" />
+      </div>
+
+      <div class="project-card">
+        <div class="card-content">
+          <img src="https://i.ibb.co/zWb146fD/webinar.png" alt="Icon" class="card-icon" />
+          <h3 class="card-title">CNCTRAIN Webinar Landing Page</h3>
+          <p class="card-desc">Landing page with agenda, bios, and form.</p>
+        </div>
+        <img src="https://i.ibb.co/spDzL4Tp/Zoho-landingpage-2-logo.png" alt="Project Image" class="card-hover-img" />
+      </div>
+
+      <div class="project-card">
+        <div class="card-content">
+          <img src="https://i.ibb.co/Y7vdWRh6/diploma.png" alt="Icon" class="card-icon" />
+          <h3 class="card-title">CS50 & Udemy    Projects</h3>
+          <p class="card-desc">Self-learning projects in full-stack development.</p>
+        </div>
+        <img src="https://i.ibb.co/q3XJ1kSj/image.jpg" alt="Project Image" class="card-hover-img" />
+      </div>
+
+    </div>
+
+<a href="usecases.html" class="cta-link">
+  <button class="cta-button">Explore more</button>
+</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Mohammed Fayaz. All rights reserved.
+  </footer>
+
+</body>
+</html>
