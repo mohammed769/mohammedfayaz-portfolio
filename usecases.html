@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Use Cases - Mohammed Fayaz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+one&family=ZCOOL+Kuaile&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -20,15 +20,16 @@
       overflow-x: hidden;
       min-height: 100vh;
       position: relative;
-      padding-bottom: 60px; /* Space for footer */
+      padding-bottom: 60px;
     }
 
     header {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(15, 12, 41, 0.85);
-      padding: 15px 40px;
+      background: rgba(15, 12, 41, 0.95);
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -37,13 +38,37 @@
     }
 
     header h1 {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Black Ops One', cursive;
       font-size: 16px;
       background: linear-gradient(90deg, #00ffe7, #ff00c8);
       text-shadow: 0 8px 80px rgba(0,0,0,0.5);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: bold;
+    }
+
+    .active {
+      color: #0ff !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      padding: 5px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: linear-gradient(90deg, #00ffe7, #ff00c8);
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
     }
 
     nav a {
@@ -55,76 +80,82 @@
     }
 
     nav a:hover {
-      color: #0ff;
+      color: #ff00c8;
     }
 
     .usecase-section {
       text-align: center;
-      padding: 100px 20px;
+      padding: 100px 15px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .section-heading h2 {
-      font-size: 3rem;
-      margin-bottom: 3rem;
+      font-size: 2rem;
+      font-family: 'ZCOOL Kuaile', cursive;
+      margin-bottom: 2rem;
       background: linear-gradient(90deg, #00ffe7, #ff00c8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-align: center;
     }
 
     .usecase-row {
       display: flex;
-      justify-content: flex-start;
-      margin-bottom: 3rem;
-      padding-left: 100px;
-    }
-
-    .usecase-row.right {
-      justify-content: flex-end;
-      padding-right: 100px;
+      justify-content: center;
+      margin-bottom: 2rem;
     }
 
     .usecase-card {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid #333;
       border-radius: 12px;
-      padding: 2rem;
-      max-width: 600px;
+      padding: 1.5rem;
       width: 100%;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);;
+      max-width: 600px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .usecase-card:hover {
+      transform: translateY(-5px);
     }
 
     .usecase-card h2 {
-      background: linear-gradient(180deg,  #0077ff, #00ffe7);
+      font-family: 'ZCOOL Kuaile', cursive;
+      font-size: 1.2rem;
+      background: linear-gradient(180deg, #0077ff, #00ffe7);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-align: center;
-      margin-top: 0;
+      margin: 0 0 1rem 0;
     }
 
     .usecase-card p {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 0.9rem;
       color: #ccc;
       line-height: 1.6;
+      margin-bottom: 1rem;
     }
 
     .usecase-card button {
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
+      margin-top: 0.5rem;
+      padding: 0.6rem 1.2rem;
       background: linear-gradient(to bottom, #38b0c0, #2428ee);
-      color: #e6d6d6;
-      text-shadow: 0 0 6px #3d3d3d;
+      color: #fff;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
-      transition: transform 0.2s;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
     }
 
     .usecase-card button:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(56, 176, 192, 0.7);
     }
 
-    /* Popup */
     .popup {
       display: none;
       position: fixed;
@@ -134,22 +165,22 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0,0,0,0.9);
+      background-color: rgba(0, 0, 0, 0.9);
     }
 
     .popup-content {
-      margin: 5% auto;
+      margin: 2% auto;
       padding: 1rem;
       background-color: #1a1a1a;
       border-radius: 10px;
-      width: 80%;
+      width: 95%;
       max-width: 900px;
       position: relative;
     }
 
     .popup-content iframe {
       width: 100%;
-      height: 500px;
+      height: 80vh;
       border: none;
       border-radius: 8px;
     }
@@ -172,75 +203,138 @@
       text-align: center;
       padding: 10px 20px;
       font-size: 0.9rem;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       color: #999;
-      border-top: 0px solid #333;
     }
 
-    @media screen and (max-width: 768px) {
-      .usecase-row {
-        justify-content: center;
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
       }
 
-      .usecase-row.right {
-        justify-content: center;
+      nav {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 60px);
+        background: rgba(15, 12, 41, 0.95);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        transition: 0.5s;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+      }
+
+      nav.active {
+        left: 0;
+      }
+
+      nav a {
+        margin: 1rem 0;
+        font-size: 1.1rem;
+      }
+
+      .usecase-section {
+        padding: 80px 15px 60px;
+      }
+
+      .section-heading h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .usecase-card {
+        padding: 1.2rem;
+      }
+
+      .usecase-card h2 {
+        font-size: 1.1rem;
+      }
+
+      .usecase-card p {
+        font-size: 0.85rem;
+      }
+
+      .popup-content {
+        margin: 5% auto;
+        width: 95%;
+        padding: 0.5rem;
+      }
+
+      .popup-content iframe {
+        height: 70vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-heading h2 {
+        font-size: 1.5rem;
+      }
+
+      .usecase-card {
+        padding: 1rem;
+      }
+
+      .usecase-card button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <header>
     <h1>FAYAZ</h1>
-    <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="mainNav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
-      <a href="usecases.html"  class="active">Use Cases</a>
+      <a href="usecases.html" class="active">Use Cases</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- Use Case Section -->
   <section class="usecase-section">
     <div class="section-heading">
-    <h2>Explore My Case Studies</h2>
+      <h2>Explore My Case Studies</h2>
     </div>
 
-    <!-- Use Case 1: Left aligned -->
     <div class="usecase-row">
       <div class="usecase-card">
         <h2>Abhyaz Website Service Page Re-design</h2>
-        <p>Developed a visually structured and responsive Service page to showcase Abhyaz's key offerings.The design focused on clarity, interactivity, and smooth navigation across device.</p>
+        <p>Developed a visually structured and responsive Service page to showcase Abhyaz's key offerings. The design focused on clarity, interactivity, and smooth navigation across devices.</p>
         <button onclick="openPDF('https://drive.google.com/file/d/1di_eEtX-CenWOAzDZ25DKnN_2d24frCH/preview')">View Case Study</button>
       </div>
     </div>
 
-    <!-- Use Case 2: Right aligned -->
-    <div class="usecase-row right">
+    <div class="usecase-row">
       <div class="usecase-card">
-        <h2>Abhyaz Website Zoho Pagesense Implemen...</h2>
-        <p>Implementation Zoho Pagensense tools to monitor user behavior and optimize the website experience using heatmaps, funnel analysis, and goal tracking for actionable insights.</p>
+        <h2>Abhyaz Website Zoho Pagesense Implementation</h2>
+        <p>Implemented Zoho Pagesense tools to monitor user behavior and optimize the website experience using heatmaps, funnel analysis, and goal tracking for actionable insights.</p>
         <button onclick="openPDF('https://drive.google.com/file/d/1nANStkoS8mpKfwX3AeDncNITyIZehkxP/preview')">View Case Study</button>
       </div>
     </div>
 
-    <!-- Use Case 3: Left aligned -->
     <div class="usecase-row">
       <div class="usecase-card">
         <h2>Abhyaz CNCTrain Webinar Landing Page</h2>
-        <p>Developed and Designed a professional and engaging landing page for the CNCTrain webinar, featuring events details, host profiles, and a conversion-focused registration form.</p>
+        <p>Developed and designed a professional and engaging landing page for the CNCTrain webinar, featuring event details, host profiles, and a conversion-focused registration form.</p>
         <button onclick="openPDF('https://drive.google.com/file/d/16kcdfbgWGF4hC_Rxvz5oLcGrNMhPPNAi/preview')">View Case Study</button>
       </div>
     </div>
   </section>
    
-    <!-- Footer -->
-    <footer>
-      &copy; 2025 Mohammed Fayaz. All rights reserved.
-    </footer>
+  <footer>
+    &copy; 2025 Mohammed Fayaz. All rights reserved.
+  </footer>
 
-  <!-- PDF Popup -->
   <div id="pdfPopup" class="popup">
     <div class="popup-content">
       <span class="close-btn" onclick="closePDF()">&times;</span>
@@ -249,16 +343,43 @@
   </div>
 
   <script>
+
+    function toggleMenu() {
+      const nav = document.getElementById("mainNav");
+      nav.classList.toggle("active");
+      
+      const spans = document.querySelectorAll('.menu-toggle span');
+      spans[0].style.transform = nav.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : '';
+      spans[1].style.opacity = nav.classList.contains('active') ? '0' : '1';
+      spans[2].style.transform = nav.classList.contains('active') ? 'rotate(-45deg) translate(7px, -6px)' : '';
+    }
+
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          toggleMenu();
+        }
+      });
+    });
+
     function openPDF(url) {
       document.getElementById("pdfFrame").src = url;
       document.getElementById("pdfPopup").style.display = "block";
+      document.body.style.overflow = "hidden";
     }
 
     function closePDF() {
       document.getElementById("pdfFrame").src = "";
       document.getElementById("pdfPopup").style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    window.onclick = function(event) {
+      const popup = document.getElementById("pdfPopup");
+      if (event.target == popup) {
+        closePDF();
+      }
     }
   </script>
-
 </body>
 </html>
