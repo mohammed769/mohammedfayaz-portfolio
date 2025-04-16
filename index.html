@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mohammed Fayaz | Frontend Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+one&family=ZCOOL+Kuaile&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -24,6 +24,7 @@
     }
 
     header {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       position: fixed;
       top: 0;
       width: 100%;
@@ -37,12 +38,21 @@
     }
 
     header h1 {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Black Ops One', cursive;
       font-size: 16px;
       background: linear-gradient(90deg, #00ffe7, #ff00c8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: bold;
+    }
+
+    .active {
+      color: #0ff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
     }
 
     nav a {
@@ -54,7 +64,7 @@
     }
 
     nav a:hover {
-      color: #0ff;
+      color: #ff00c8;
     }
 
     .hero {
@@ -80,31 +90,35 @@
     }
 
     .hero-text h3 {
-      font-size: 30px;
+      font-size: 24px;
       color: #ffffff73;
       text-shadow: 0 8px 80px rgba(0,0,0,0.5);
+      font-family: 'Black Ops One', 'Courier New', Courier, monospace
     }
   
 
     .hero-text h1 {
-      font-size: 3.8rem;
+      font-size: 40px;
       margin-bottom: 40px;
       background: linear-gradient(90deg, #00ffe7, #ff00c8);
       text-shadow: 0 8px 80px rgba(0,0,0,0.5);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: bold;
+      font-family: 'ZCOOL Kuaile', cursive;
     }
 
     .hero-text p {
       margin-top: 0;
-      font-size: 18px;
+      font-size: 14px;
       color: #ccc;
       line-height: 1.4;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     }
 
     .btn {
       display: inline-block;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       margin-top: 20px;
       background: #ffffff1a;
       color: #fff;
@@ -151,26 +165,10 @@
       text-align: center;
       padding: 10px 20px;
       font-size: 0.9rem;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       color: #999;
     }
 
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-text {
-        text-align: center;
-      }
-
-      .hero-image img {
-        width: 200px;
-        height: 200px;
-      }
-    }
-
-    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -232,13 +230,112 @@
     .download-link:hover {
       opacity: 0.8;
     }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: linear-gradient(90deg, #00ffe7, #ff00c8);
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 20px;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      nav {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 60px);
+        background: rgba(15, 12, 41, 0.95);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        transition: 0.5s;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+      }
+      
+      nav.active {
+        left: 0;
+      }
+      
+      nav a {
+        margin: 15px 0;
+        font-size: 18px;
+      }
+      
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 20px 60px;
+        padding-left: 20px;
+        gap: 30px;
+      }
+      
+      .hero-text {
+        text-align: center;
+        padding-top: 20px;
+      }
+      
+      .hero-text h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      
+      .hero-image img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        max-height: 450px;
+        border-radius: 20px;
+        object-fit: contain;
+      }
+      
+      .btn {
+        margin: 10px 5px;
+        padding: 8px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-text h1 {
+        font-size: 28px;
+      }
+      
+      .hero-text h3 {
+        font-size: 18px;
+      }
+      
+      .hero-image img {
+        max-width: 280px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>FAYAZ</h1>
-    <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="mainNav">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
@@ -249,7 +346,7 @@
 
   <section class="hero">
     <div class="hero-image">
-      <img src="your-photo.jpg" alt="Mohammed Fayaz" />
+      <img src="https://i.ibb.co/SXgcWysm/fayazhome.png" alt="Mohammed Fayaz" />
     </div>
     <div class="hero-text">
       <h3>Hello World - I'm</h3>
@@ -261,15 +358,14 @@
     </div>
   </section>
 
-  <!-- Modal for PDF CV -->
   <div id="cvModal" class="modal">
     <div class="modal-content">
       <div class="modal-header">
         <h2>My CV</h2>
         <span class="close" onclick="closeModal()">&times;</span>
       </div>
-      <iframe class="pdf-frame" src="cv.pdf"></iframe>
-      <a class="download-link" href="cv.pdf" download>Download PDF</a>
+      <iframe class="pdf-frame" src="https://drive.google.com/file/d/1Jp5KiKVNHspDdCNuziFeyYFeaW-r9O-K/preview"></iframe>
+      <a class="download-link" href="https://drive.google.com/uc?export=download&id=1Jp5KiKVNHspDdCNuziFeyYFeaW-r9O-K"download>Download PDF</a>
     </div>
   </div>
 
@@ -286,7 +382,17 @@
       document.getElementById("cvModal").style.display = "none";
     }
 
-    // Close modal on outside click
+    function toggleMenu() {
+      const nav = document.getElementById("mainNav");
+      nav.classList.toggle("active");
+      
+      
+      const spans = document.querySelectorAll('.menu-toggle span');
+      spans[0].classList.toggle('rotate-down');
+      spans[1].classList.toggle('hide');
+      spans[2].classList.toggle('rotate-up');
+    }
+
     window.onclick = function(event) {
       const modal = document.getElementById("cvModal");
       if (event.target == modal) {
